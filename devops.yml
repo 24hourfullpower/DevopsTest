@@ -1,0 +1,20 @@
+#This is the ansible playbook for installing apache and mysql in the server.
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: Install MySQL,PHP & Apache
+      apt: name={{ item }} update_cache=yes state=latest
+      with_items:
+      - php5-mysql
+      - mysql-server
+      - apache2
+      - php5
+    - name: Start the MySQL & Apache service
+      service: 
+      name: {{ item }} 
+      state: started
+      enabled: true
+      with_items:
+      - mysql
+      - apache2
