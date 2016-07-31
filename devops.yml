@@ -10,6 +10,7 @@
       - mysql-server
       - apache2
       - php5
+      - python-mysqldb
     - name: Start the MySQL & Apache service
       service: 
       name: {{ item }} 
@@ -18,3 +19,7 @@
       with_items:
       - mysql
       - apache2
+    - name: Create database and tables
+      - mysql_db: name=aon_db state=present
+    - name: Import DB 
+      shell: mysql aon_db < insert.sql
