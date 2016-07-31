@@ -8,4 +8,4 @@ customer_age INT NOT NULL,
 INSERT INTO customer 
 (customer_name, customer_age)
 VALUES
-("Mayank", 60); 
+("Mayank", 27); 
