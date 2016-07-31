@@ -1,6 +1,6 @@
 <?php
 
-function get_data() {
+function getdata() {
         
    $dbhost = 'localhost:3036';
    $dbuser = 'root';
