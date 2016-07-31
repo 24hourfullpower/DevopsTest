@@ -1,11 +1,11 @@
 #SQL file to create table and insert data.
 
 CREATE TABLE customer(
-customer_id INT NOT NULL AUTO_INCREMENT,
+customer_name VARCHAR(40) NOT NULL,
 customer_age INT NOT NULL,
 );
 
 INSERT INTO customer 
-(customer_id, customer_age)
+(customer_name, customer_age)
 VALUES
-(1, 60); 
+("Mayank", 60); 
