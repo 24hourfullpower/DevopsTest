@@ -1,5 +1,7 @@
 # This is the Vagrant file which will be used to start up vagant
 # We will be installing Ubuntu
+# We will be using a static IP and forwarding the port 80 to our localhost 8080
+
 
 VAGRANTFILE_API_VERSION = "2"
 
