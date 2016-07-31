@@ -20,6 +20,6 @@
       - mysql
       - apache2
     - name: Create database and tables
-      - mysql_db: name=aon_db state=present
+      mysql_db: name=aon_db state=present
     - name: Import DB 
       shell: mysql aon_db < insert.sql
