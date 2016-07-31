@@ -1,4 +1,4 @@
-#This is the ansible playbook for installing apache and mysql in the server.
+#This is the ansible playbook for installing apache PHP & mysql on the server.
 ---
 - hosts: all
   sudo: yes
