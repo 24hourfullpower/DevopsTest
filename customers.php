@@ -4,7 +4,7 @@ function getdata() {
         
    $dbhost = 'localhost:3036';
    $dbuser = 'root';
-   $dbpass = '';
+   $dbpass = 'root';
    
    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
    
