@@ -2,21 +2,21 @@
 # We will be installing Ubuntu
 # We will be using a static IP and forwarding the port 80 to our localhost 8080
 
-
-VAGRANTFILE_API_VERSION = "2"
-
-
-
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+Vagrant.configure(2) do |config|
 
   config.ssh.forward_agent = true
   config.vm.define "ubuntu" do |ubuntu|
 
     ubuntu.vm.hostname = "ubuntu"
 
-    ubuntu.vm.box = "ubuntu"
+    ubuntu.vm.box = "ubuntu/trusty64"
 
+config.ssh.insert_key = false
 
+  config.vm.provision "ansible" do |ansible|
+    ansible.verbose = "v"
+    ansible.playbook = "devops.yml"
+    end
 
 config.vm.network "forwarded_port", guest: 80, host: 8080
 
@@ -31,3 +31,4 @@ config.vm.network "forwarded_port", guest: 80, host: 8080
      end
 
    end
+end
